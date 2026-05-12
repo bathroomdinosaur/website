@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background: #ffffff;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    color: #F69898;
+    overflow-y: scroll;
+    animation: fadeIn 0.5s ease-in;
+    padding: 0 60px 80px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #F69898;
+    text-decoration: none;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+header h1 {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 58px;
+    color: #F69898;
+}
+
+header a {
+    font-size: 22px;
+    color: #F69898;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+header a:hover {
+    opacity: 0.6;
+}
+
+.side-tab {
+    position: absolute;
+    right: -42px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    background: #F69898;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px 24px;
+    border-radius: 12px 12px 0 0;
+    transition: right 0.2s;
+}
+
+.side-tab:hover {
+    right: -36px;
+}
+
+/* price table */
+.table-wrap {
+    overflow-x: auto;
+    margin-bottom: 60px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 22px;
+    text-align: center;
+}
+
+thead th {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 26px;
+    color: #F69898;
+    padding: 16px 24px;
+    border-bottom: 2px solid #FFE9E9;
+}
+
+thead th:first-child {
+    text-align: left;
+}
+
+tbody td {
+    padding: 18px 24px;
+    border-bottom: 1px solid #FFE9E9;
+    color: #F69898;
+}
+
+tbody td:first-child {
+    text-align: left;
+    font-size: 24px;
+    color: #F69898;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover td {
+    background: #FFF5F5;
+}
+
+/* extras */
+.extras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.extra-card {
+    background: #FFF0F0;
+    border-radius: 20px;
+    padding: 24px 32px;
+    flex: 1;
+    min-width: 220px;
+}
+
+.extra-card h3 {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 24px;
+    color: #F69898;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.extra-card p {
+    font-size: 20px;
+    color: #F69898;
+    line-height: 1.6;
+}
+
+.notes p {
+    font-size: 24px;
+    color:#F69898;
+    text-align: center;
+}
+
+.extra-list {
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.extra-line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+  color: #F69898;
+  font-size: 24px;
+}
+
+.extra-name,
+.extra-price {
+  white-space: nowrap;
+}
+
+.dots {
+  flex: 1;
+  border-bottom: 3px dotted #F69898;
+  transform: translateY(-2px);
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+
+  .extra-line {
+    font-size: 18px;
+    gap: 10px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .extra-price {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* commission button */
+.cta {
+    text-align: center;
+}
+
+.cta a {
+    display: inline-block;
+    background: #F69898;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 16px 60px;
+    font-size: 28px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.cta a:hover {
+    background: #e07e7e;
+    transform: scale(1.02);
+}

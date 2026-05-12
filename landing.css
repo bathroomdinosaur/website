@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  background: #ffffff;
+  font-family: 'Rubik Bubbles', sans-serif;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* marquee rows */
+.marquee {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee--1 { top: 0; }
+.marquee--2 { top: 160px; }
+.marquee--3 { top: 320px; }
+.marquee--4 { top: 480px; }
+
+.track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  font-size: 120px;
+  color: rgb(255, 248, 248);
+  animation: scroll 60s linear infinite;
+}
+
+.track.reverse {
+  animation: scroll-reverse 60s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scroll-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* main content */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: right;
+  margin-top: 80px;
+  margin-right: 80px;
+}
+
+/* title */
+h1 {
+  color: #F69898;
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+/* icons */
+.icons a {
+  text-decoration: none;
+}
+
+.icons {
+  display: flex; 
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 32px;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.vgen-icon svg {
+  fill: #F69898; 
+}
+
+.email-icon svg {
+  stroke: #F69898;
+}
+
+.instagram-icon svg {
+  fill: #F69898;
+}
+
+/* buttons */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+button {
+  font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+  background: #FFE9E9;
+  color: #F69898;
+  border: none;
+
+  width: 350px;      
+  padding: 15px 0;   
+
+  border-radius: 40px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #F69898;
+  color: white;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+
+  .container h1 {
+    font-size: 72px;
+    text-align: center;
+  }
+
+  .buttons {
+    gap: 16px;
+  }
+
+  .icons {
+    gap: 20px;
+  }
+
+  .marquee {
+    font-size: 36px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 16px;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  .container h1 {
+    font-size: 42px;
+    line-height: 1;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .icons svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .buttons a,
+  .buttons button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .buttons button {
+    font-size: 22px;
+    padding: 14px 20px;
+  }
+
+  .marquee {
+    font-size: 24px;
+  }
+
+  .track {
+    gap: 24px;
+  }
+}

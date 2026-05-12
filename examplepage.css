@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    color: #F69898;
+    overflow-y: scroll;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #F69898;
+    text-decoration: none;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+}
+
+header h1 {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 58px;
+    color: #F69898;
+}
+
+header a {
+    font-size: 22px;
+    color: #F69898;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+header a:hover {
+    opacity: 0.6;
+}
+
+.gallery {
+    columns: 4 200px;
+    column-gap: 12px;
+    padding: 0 40px 60px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 40px;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 16px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.gallery-item img {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}

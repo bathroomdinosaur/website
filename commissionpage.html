@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>commission request — bathroomdinosaur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="commission.css" />
+</head>
+
+<body>
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <h2>terms of agreement</h2>
+            <div class="terms-text">
+                <p><strong>GENERAL</strong></p>
+                <p>I retain the right to refuse any request for any reason.</p>
+
+                <p><strong>PAYMENTS</strong></p>
+                <p>Payments must be made and confirmed before the commission enters production.</p>
+
+                <p><strong>REVISIONS</strong></p>
+                <p>We will offer multiple opportunities for revisions/feedback throughout the various drawing stages
+                    before finalizing and sending the deliverable. However, after the client receives the final
+                    deliverable, the client cannot request any further revisions.</p>
+
+                <p><strong>DEADLINES AND DELIVERY</strong></p>
+                <p>Commissions will be carried out within 3 weeks after payment.</p>
+
+                <p><strong>REFUNDS</strong></p>
+                <p>No refunds will be extended unless I find the commission cannot be completed within the time period
+                    agreed on.</p>
+
+                <p><strong>COMMUNICATION</strong></p>
+                <p>I retain the right to reject the request or block any client that is abusive and/or derogatory.</p>
+
+                <p><strong>COPYRIGHT AND PRIVACY</strong></p>
+                <p>The client is not allowed to claim the commission as their own art.</p>
+                <p>Commission may be shared on any platform as long as I am properly credited.</p>
+                <p>The commission may not be used for any commercial or merchandising purposes.</p>
+
+                <p><strong>PERMISSIONS</strong></p>
+                <p>DO NOT FEED MY ART INTO AI.</p>
+                <p>The client is not allowed to edit the commission without my explicit permission.</p>
+            </div>
+            <button class="accept-btn" onclick="acceptTerms()">I ACCEPT</button>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="overlay" id="loadingOverlay" style="display:none;">
+        <div class="popup">
+            <p style="color:#ffffff; font-size:24px; font-family:'Rubik Bubbles', cursive;">loading... please wait, this
+                may take a second...</p>
+        </div>
+    </div>
+
+    <!-- Thank you popup -->
+    <div class="overlay" id="thankyouOverlay" style="display:none;">
+        <div class="popup">
+            <h2>thank you!</h2>
+            <p style="color:#ffffff; font-size:24px; margin-bottom:24px;">your commission request has been received.
+                we'll be in touch soon!</p>
+            <button class="accept-btn" onclick="goHome()">back to home</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <a class="close-btn" href="index.html">✖</a>
+
+        <h1>commission request</h1>
+
+        <!-- Contact -->
+        <div class="section">
+            <label>Your contact information*</label>
+            <p class="sublabel">Please make sure your email is inputted correctly, this is how we will contact you</p>
+            <input type="email" placeholder="youremail@example.com" />
+        </div>
+        
+
+        <!-- References -->
+        <div class="section">
+            <label>References*</label>
+            <p class="sublabel">Character ref sheets, moodboards, poses, etc.</p>
+            <div class="file-list" id="fileList"></div>
+            <input type="file" id="fileInput" multiple accept="image/*,.pdf" onchange="handleFiles(this.files)" />
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">upload file</button>
+        </div>
+
+        <!-- Commission type -->
+        <div class="section">
+            <div class="dropdown-row">
+                <label>Commission type and size*</label>
+                <select id="sizeSelect" onchange="updatePrice()">
+                    <option value="" disabled selected>select size</option>
+                    <option value="bust">bust</option>
+                    <option value="half">torso</option>
+                    <option value="full">full body</option>
+                </select>
+                <select id="typeSelect" onchange="updatePrice()">
+                    <option value="" disabled selected>select type</option>
+                    <option value="sketch">sketch</option>
+                    <option value="flat">flat</option>
+                    <option value="rendered">rendered</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Extra info -->
+        <div class="section">
+            <label>Extra info</label>
+            <textarea placeholder="your answer"></textarea>
+        </div>
+
+        <!-- Deadline -->
+        <div class="section">
+            <label>Do you have a hard deadline?</label>
+            <input type="date" id="deadlineInput" min="2026-01-01" max="2099-12-31" onchange="updatePrice()" />
+        </div>
+
+        <!-- Price calculation -->
+        <div class="price-box">
+            <h3>Price calculation</h3>
+            <p class="note">Please note that this is an estimate price and we may adjust this based on design
+                requirements, extra props, etc.</p>
+            <p class="price-line" id="basePrice">— x — = 0.00 USD</p>
+            <p class="price-line" id="rushFee">Rush order fee = 0.00 USD</p>
+            <p class="price-line subtotal" id="subtotal">Subtotal = 0.00 USD</p>
+        </div>
+
+        <button class="submit-btn" onclick="submitRequest()">Submit Request</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

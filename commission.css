@@ -1,0 +1,428 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: rgb(255, 175, 175);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+}
+
+.popup h2 {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 36px;
+    color: #ffffff;
+    margin-top: 0px
+}
+
+.terms-text {
+    text-align: left;
+    color: #ffffff;
+    font-size: 23px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+
+.terms-text p {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+.terms-text strong {
+    display: block;
+    margin-top: 16px;
+}
+
+.accept-btn {
+    background: #ffffff;
+    color: rgb(255, 157, 157);
+    border: none;
+    border-radius: 40px;
+    padding: 12px 40px;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    width: auto;
+    transition: background 0.2s;
+}
+
+.accept-btn:hover {
+    background: #ff8e8e;
+    color: white;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    color: #F69898;
+    min-height: 100vh;
+    padding: 20px 80px;
+    animation: fadeIn 0.5s ease-in;
+    overflow-y: scroll;
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-size: 48px;    
+    font-weight: bold;
+    color: #F69898;
+    text-decoration: none;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+    opacity: 0.6;
+}
+
+h1 {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 58px;
+    color: #F69898;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section {
+    margin-bottom: 36px;
+}
+
+label {
+    display: block;
+    font-size: 34px;
+    color: #F69898;
+    margin-bottom: 6px;
+}
+
+.sublabel {
+    font-size: 25px;
+    color: #fab5b5;
+    margin-bottom: 12px;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+    width: 100%;
+    background: #FFF0F0;
+    border: none;
+    border-radius: 40px;
+    padding: 14px 22px;
+    font-size: 25px;
+    color: #F69898;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    outline: none;
+    transition: background 0.2s;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="date"]::placeholder,
+textarea::placeholder {
+    color: #fab5b5;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    background: #ffe4e4;
+}
+
+textarea {
+    border-radius: 20px;
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* file upload */
+.file-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.file-tag {
+    background: #FFF0F0;
+    border-radius: 40px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 25px;
+    color: #F69898;
+}
+
+.file-tag button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #F69898;
+    font-size: 25px;
+    padding: 0;
+    width: auto;
+    border-radius: 0;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.file-tag button:hover {
+    background: none;
+    color: #F69898;
+}
+
+.upload-btn {
+    background: #F69898;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 24px;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: auto;
+}
+
+.upload-btn:hover {
+    background: #e07e7e;
+    color: white;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* dropdowns */
+.dropdown-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dropdown-row label {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+select {
+    background: #F69898;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='white' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    transition: background-color 0.2s;
+}
+
+select:hover {
+    background-color: #e07e7e;
+}
+
+/* price box */
+.price-box {
+    border: 2px solid #F9C0C0;
+    border-radius: 16px;
+    padding: 0px 28px;
+    margin-bottom: 36px;
+}
+
+.price-box h3 {
+    font-size: 34px;
+    color: #F69898;
+}
+
+.price-box .note {
+    font-size: 25px;
+    color: #fab5b5;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+}
+
+.price-line {
+    font-size: 29px;
+    color: #F69898;
+}
+
+.price-line.subtotal {
+    font-size: 35px;
+}
+
+/* submit */
+.submit-btn {
+    display: block;
+    width: 280px;
+    margin: 0 auto;
+    background: #F69898;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 16px 0;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background: #e07e7e;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+
+body {
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 32px;
+}
+
+input,
+textarea,
+select,
+button {
+  width: 100%;
+  max-width: 100%;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.dropdown-row {
+  display: flex;
+  gap: 16px;
+}
+
+.dropdown-row select {
+  flex: 1;
+}
+
+/* popup responsiveness */
+.popup {
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+  .card {
+    padding: 28px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
+
+  .dropdown-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-box {
+    padding: 18px;
+  }
+
+  .price-line,
+  .note {
+    font-size: 16px;
+  }
+
+  .submit-btn,
+  .upload-btn,
+  .accept-btn {
+    width: 100%;
+  }
+
+  .close-btn {
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+  }
+
+  .terms-text {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .popup h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+}
