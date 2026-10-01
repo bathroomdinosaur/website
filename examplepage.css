@@ -105,3 +105,8 @@ header a:hover {
 .gallery-item img:hover {
     transform: scale(1.02);
 }
+
+.gallery-item img {
+    min-height: 50px;
+    background: #fce4ec;
+}
